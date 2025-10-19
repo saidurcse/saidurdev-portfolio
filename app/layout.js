@@ -10,9 +10,9 @@ import "./css/globals.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Portfolio of Abu Said - Software Developer",
+  title: "Portfolio of Saidur - Software Developer",
   description:
-    "This is the portfolio of Abu Said. I am a full stack developer and a self taught developer. I love to learn new things and I am always open to collaborating with others. I am a quick learner and I am always looking for new challenges.",
+    "This is the portfolio of Muhammad Saidur Rahman. (Senior Android Developer | 11+ Years of Experience | Kotlin • Jetpack • AI/ML Integration). I am a results-driven **Senior Android Developer** with over 11 years of experience designing, developing, and optimizing scalable mobile applications across diverse industries including **E-commerce, Healthcare, Fintech, Logistics, Field Services, and AR/VR**. My career is defined by delivering user-focused, high-performance apps while leading teams through the full software development lifecycle.",
 };
 
 export default function RootLayout({ children }) {
