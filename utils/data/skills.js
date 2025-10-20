@@ -4,22 +4,15 @@ export const skillsData = [
   'Swift',
   'Flutter',
   'Dart',
-  'Python',
   'Tensorflow',
-  'Pytorch',
-  'OpenCV',
   'Firebase',
   'AWS',
   'Git',
   'Figma',
-  'Canva',
   'MySQL',
   'PostgreSQL',
   'MongoDB',
   'MaterialUI',
-  'Tailwind',
-  'Docker',
-  'Nginx',
   'Ubuntu'
 ]
 
