@@ -12,6 +12,7 @@ export const skillsData = [
   'MySQL',
   'PostgreSQL',
   'MongoDB',
+  'Tailwind',
   'MaterialUI',
   'Ubuntu'
 ]
