@@ -72,7 +72,7 @@ function ProjectCard({ project }) {
                 "CI/CD"
               ].map((tool, i, arr) => (
                 <React.Fragment key={i}>
-                  <span className="text-amber-300">"{tool}"</span>
+                  <span className="text-amber-300">&quot;{tool}&quot;</span>
                   {arr.length - 1 !== i && <span className="text-gray-400">, </span>}
                 </React.Fragment>
               ))
