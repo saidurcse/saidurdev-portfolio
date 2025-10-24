@@ -1,35 +1,9 @@
 import axios from 'axios';
-import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
-// Create and configure Nodemailer transporter
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  host: 'smtp.gmail.com',
-  port: 587,
-  secure: false, 
-  auth: {
-    user: process.env.EMAIL_ADDRESS,
-    pass: process.env.GMAIL_PASSKEY, 
-  },
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Helper function to send a message via Telegram
-async function sendTelegramMessage(token, chat_id, message) {
-  const url = `https://api.telegram.org/bot${token}/sendMessage`;
-  try {
-    const res = await axios.post(url, {
-      text: message,
-      chat_id,
-    });
-    return res.data.ok;
-  } catch (error) {
-    console.error('Error sending Telegram message:', error.response?.data || error.message);
-    return false;
-  }
-};
-
-// HTML email template
+// --- HTML Email Template ---
 const generateEmailTemplate = (name, email, userMessage) => `
   <div style="font-family: Arial, sans-serif; color: #333; padding: 20px; background-color: #f4f4f4;">
     <div style="max-width: 600px; margin: auto; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
@@ -45,67 +19,94 @@ const generateEmailTemplate = (name, email, userMessage) => `
   </div>
 `;
 
-// Helper function to send an email via Nodemailer
-async function sendEmail(payload, message) {
-  const { name, email, message: userMessage } = payload;
-  
-  const mailOptions = {
-    from: "Portfolio", 
-    to: process.env.EMAIL_ADDRESS, 
-    subject: `New Message From ${name}`, 
-    text: message, 
-    html: generateEmailTemplate(name, email, userMessage), 
-    replyTo: email, 
-  };
-  
+// --- Helper: Send Telegram Message ---
+async function sendTelegramMessage(token, chat_id, message) {
+  const url = `https://api.telegram.org/bot${token}/sendMessage`;
   try {
-    await transporter.sendMail(mailOptions);
-    return true;
+    const res = await axios.post(url, { chat_id, text: message });
+    return res.data.ok;
   } catch (error) {
-    console.error('Error while sending email:', error.message);
+    console.error('Telegram Error:', error.response?.data || error.message);
     return false;
   }
+}
+
+// --- Shared CORS Headers ---
+const corsHeaders = {
+  'Access-Control-Allow-Origin': 'https://www.saidur.dev', // local '*' and change to 'https://www.saidur.dev' for production
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type',
 };
 
+// --- Handle Preflight ---
+export async function OPTIONS() {
+  return new Response(null, { status: 204, headers: corsHeaders });
+}
+
+// --- Handle POST Request ---
 export async function POST(request) {
   try {
-    const payload = await request.json();
-    const { name, email, message: userMessage } = payload;
+    const { name, email, message: userMessage } = await request.json();
+
+    // Validate fields
+    if (!name || !email || !userMessage) {
+      return new Response(
+        JSON.stringify({ success: false, message: 'All fields are required.' }),
+        { status: 400, headers: corsHeaders }
+      );
+    }
+
     const token = process.env.TELEGRAM_BOT_TOKEN;
     const chat_id = process.env.TELEGRAM_CHAT_ID;
 
-    // Validate environment variables
     if (!token || !chat_id) {
-      return NextResponse.json({
+      console.warn('Missing Telegram credentials.');
+    }
+
+    const telegramMessage = `📩 New message from ${name}\n\n📧 Email: ${email}\n\n💬 Message:\n${userMessage}`;
+
+    // --- Send Telegram Message ---
+    const telegramSuccess = token && chat_id
+      ? await sendTelegramMessage(token, chat_id, telegramMessage)
+      : false;
+
+    // --- Send Email via Resend ---
+    let emailSuccess = false;
+    try {
+      await resend.emails.send({
+        from: 'Portfolio <no-reply@saidur.dev>',
+        to: process.env.EMAIL_ADDRESS,
+        subject: `New Message from ${name}`,
+        html: generateEmailTemplate(name, email, userMessage),
+        reply_to: email,
+      });
+      emailSuccess = true;
+    } catch (error) {
+      console.error('Resend Email Error:', error);
+    }
+
+    if (emailSuccess || telegramSuccess) {
+      return new Response(
+        JSON.stringify({
+          success: true,
+          message: 'Message sent successfully!',
+        }),
+        { status: 200, headers: corsHeaders }
+      );
+    }
+
+    return new Response(
+      JSON.stringify({
         success: false,
-        message: 'Telegram token or chat ID is missing.',
-      }, { status: 400 });
-    }
-
-    const message = `New message from ${name}\n\nEmail: ${email}\n\nMessage:\n\n${userMessage}\n\n`;
-
-    // Send Telegram message
-    const telegramSuccess = await sendTelegramMessage(token, chat_id, message);
-
-    // Send email
-    const emailSuccess = await sendEmail(payload, message);
-
-    if (telegramSuccess && emailSuccess) {
-      return NextResponse.json({
-        success: true,
-        message: 'Message and email sent successfully!',
-      }, { status: 200 });
-    }
-
-    return NextResponse.json({
-      success: false,
-      message: 'Failed to send message or email.',
-    }, { status: 500 });
+        message: 'Failed to send message via both channels.',
+      }),
+      { status: 500, headers: corsHeaders }
+    );
   } catch (error) {
     console.error('API Error:', error.message);
-    return NextResponse.json({
-      success: false,
-      message: 'Server error occurred.',
-    }, { status: 500 });
+    return new Response(
+      JSON.stringify({ success: false, message: 'Internal server error.' }),
+      { status: 500, headers: corsHeaders }
+    );
   }
-};
+}
