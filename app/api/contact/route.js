@@ -31,7 +31,7 @@ async function sendTelegramMessage(token, chat_id, message) {
 
 // --- Shared CORS Headers ---
 const corsHeaders = {
-  'Access-Control-Allow-Origin': 'https://www.saidur.dev', // local '*' and change to 'https://www.saidur.dev' for production
+  'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type',
 };
