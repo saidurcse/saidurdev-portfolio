@@ -1,8 +1,6 @@
 import axios from 'axios';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 // --- HTML Email Template ---
 const generateEmailTemplate = (name, email, userMessage) => `
   <div style="font-family: Arial, sans-serif; color: #333; padding: 20px; background-color: #f4f4f4;">
@@ -45,6 +43,9 @@ export async function OPTIONS() {
 
 // --- Handle POST Request ---
 export async function POST(request) {
+
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
   try {
     const { name, email, message: userMessage } = await request.json();
 
