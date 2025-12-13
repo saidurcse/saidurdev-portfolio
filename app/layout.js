@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Portfolio of Saidur - Software Developer",
   description:
-    "This is the portfolio of Muhammad Saidur Rahman. (Senior Android Developer | 11+ Years of Experience | Kotlin • Jetpack • AI/ML Integration). I am a results-driven **Senior Android Developer** with over 11 years of experience designing, developing, and optimizing scalable mobile applications across diverse industries including **E-commerce, Healthcare, Fintech, Logistics, Field Services, and AR/VR**. My career is defined by delivering user-focused, high-performance apps while leading teams through the full software development lifecycle.",
+    "This is the portfolio of Saidur Rahman. (Senior Android Developer | 11+ Years of Experience | Kotlin • Jetpack • AI/ML Integration). I am a results-driven **Senior Android Developer** with over 11 years of experience designing, developing, and optimizing scalable mobile applications across diverse industries including **E-commerce, Healthcare, Fintech, Logistics, Field Services, and AR/VR**. My career is defined by delivering user-focused, high-performance apps while leading teams through the full software development lifecycle.",
 };
 
 export default function RootLayout({ children }) {
