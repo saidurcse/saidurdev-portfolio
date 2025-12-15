@@ -1,5 +1,6 @@
-import axios from 'axios';
 import { Resend } from 'resend';
+
+export const runtime = 'nodejs';
 
 // ------------------ Email Template ------------------
 const generateEmailTemplate = (name, email, userMessage) => `
@@ -17,21 +18,6 @@ const generateEmailTemplate = (name, email, userMessage) => `
   </div>
 `;
 
-// ------------------ Telegram Helper ------------------
-async function sendTelegramMessage(token, chatId, message) {
-  const url = `https://api.telegram.org/bot${token}/sendMessage`;
-  try {
-    const res = await axios.post(url, {
-      chat_id: chatId,
-      text: message,
-    });
-    return res.data?.ok === true;
-  } catch (error) {
-    console.error('Telegram Error:', error.response?.data || error.message);
-    return false;
-  }
-}
-
 // ------------------ CORS ------------------
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -45,15 +31,30 @@ export async function OPTIONS() {
 
 // ------------------ POST ------------------
 export async function POST(request) {
-  const resend = new Resend(process.env.RESEND_API_KEY);
-
   try {
+    // 🔒 Validate required env vars
+    if (!process.env.RESEND_API_KEY || !process.env.EMAIL_ADDRESS) {
+      console.error('Missing required environment variables');
+      return new Response(
+        JSON.stringify({
+          success: false,
+          message: 'Server email configuration error.',
+        }),
+        { status: 500, headers: corsHeaders }
+      );
+    }
+
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
     const { name, email, message } = await request.json();
 
-    // Basic validation
+    // 🔎 Basic validation
     if (!name || !email || !message) {
       return new Response(
-        JSON.stringify({ success: false, message: 'All fields are required.' }),
+        JSON.stringify({
+          success: false,
+          message: 'All fields are required.',
+        }),
         { status: 400, headers: corsHeaders }
       );
     }
@@ -61,31 +62,17 @@ export async function POST(request) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       return new Response(
-        JSON.stringify({ success: false, message: 'Invalid email address.' }),
+        JSON.stringify({
+          success: false,
+          message: 'Invalid email address.',
+        }),
         { status: 400, headers: corsHeaders }
       );
     }
 
-    // Telegram
-    const telegramToken = process.env.TELEGRAM_BOT_TOKEN;
-    const telegramChatId = process.env.TELEGRAM_CHAT_ID;
-
-    const telegramMessage = `📩 New message from ${name}\n\n📧 Email: ${email}\n\n💬 Message:\n${message}`;
-
-    const telegramSuccess =
-      telegramToken && telegramChatId
-        ? await sendTelegramMessage(
-            telegramToken,
-            telegramChatId,
-            telegramMessage
-          )
-        : false;
-
-    // Email via Resend
-    let emailSuccess = false;
-
+    // 📧 Send Email via Resend
     const { error } = await resend.emails.send({
-      from: 'Contact Form Saidur <onboarding@resend.dev>',
+      from: 'Contact Form <contact@saidur.dev>', 
       to: [process.env.EMAIL_ADDRESS],
       subject: `New Message from ${name}`,
       html: generateEmailTemplate(name, email, message),
@@ -94,27 +81,22 @@ export async function POST(request) {
 
     if (error) {
       console.error('Resend Error:', error);
-    } else {
-      emailSuccess = true;
-    }
-
-    // Final response
-    if (emailSuccess || telegramSuccess) {
       return new Response(
         JSON.stringify({
-          success: true,
-          message: 'Message sent successfully!',
+          success: false,
+          message: 'Failed to send message.',
         }),
-        { status: 200, headers: corsHeaders }
+        { status: 500, headers: corsHeaders }
       );
     }
 
+    // ✅ Success
     return new Response(
       JSON.stringify({
-        success: false,
-        message: 'Failed to send message.',
+        success: true,
+        message: 'Message sent successfully!',
       }),
-      { status: 500, headers: corsHeaders }
+      { status: 200, headers: corsHeaders }
     );
 
   } catch (error) {
