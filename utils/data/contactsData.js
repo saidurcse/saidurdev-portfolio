@@ -1,5 +1,5 @@
 export const contactsData = {
-    email: 'saidur16@proton.me',
+    email: 'contact@saidur.dev',
     phone: '',
     address: 'Dallas, Texas, USA ',
     github: 'https://github.com/saidurcse/',

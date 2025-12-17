@@ -3,7 +3,7 @@ export const personalData = {
   profile: '/profile.jpg',
   designation: "Mobile Developer",
   description: "My name is Saidur Rahman (Senior Android Developer | 11+ Years of Experience | Kotlin • Java • Jetpack Compose • Architect • Generative AI). I am a results-driven **Senior Android Developer** with over 11 years of experience designing, developing, and optimizing scalable mobile applications across diverse industries including **E-commerce, Healthcare, Fintech, Logistics, Field Services, and AR/VR**. My career is defined by delivering user-focused, high-performance apps while leading teams through the full software development lifecycle.",
-  email: 'saidur16@proton.me',
+  email: 'contact@saidur.dev',
   phone: '',
   address: 'Dallas, Texas, USA',
   github: 'https://github.com/saidurcse/',
