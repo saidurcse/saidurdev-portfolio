@@ -109,42 +109,44 @@ function HeroSection() {
               <div>
                 <span className="ml-4 lg:ml-8 mr-2 text-white">name:</span>
                 <span className="text-gray-400">{`'`}</span>
-                <span className="text-amber-300">Saidur Rahman</span>
+                <span className="text-amber-300">{personalData.name}</span>
                 <span className="text-gray-400">{`',`}</span>
               </div>
 
               <div className="ml-4 lg:ml-8 mr-2">
                 <span className="text-white">role:</span>
                 <span className="text-gray-400">{`'`}</span>
-                <span className="text-amber-300">Senior Android Developer</span>
+                <span className="text-amber-300">{personalData.role}</span>
                 <span className="text-gray-400">{`',`}</span>
               </div>
 
               <div className="ml-4 lg:ml-8 mr-2">
                 <span className="text-white">language:</span>
                 <span className="text-gray-400">{`'`}</span>
-                <span className="text-amber-300">Kotlin</span>
+                <span className="text-amber-300">{personalData.language}</span>
                 <span className="text-gray-400">{`',`}</span>
               </div>
 
               <div className="ml-4 lg:ml-8 mr-2">
                 <span className=" text-white">skills:</span>
                 <span className="text-gray-400">{`['`}</span>
-                <span className="text-amber-300">Jetpack Compose</span>
-                <span className="text-gray-400">{"', '"}</span>
                 <span className="text-amber-300">Generative AI</span>
                 <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Coroutines & Flow</span>
+                <span className="text-amber-300">LLM Integration</span>
                 <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">MVVM & Clean Architecture</span>
+                <span className="text-amber-300">RAG Architecture</span>
                 <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Dependency Injection (Hilt, Koin)</span>
+                <span className="text-amber-300">Node.js</span>
                 <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Android Jetpack Libraries</span>
+                <span className="text-amber-300">Microservices</span>
                 <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Kotlin Multiplatform</span>
+                <span className="text-amber-300">Kong API Gateway</span>
                 <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Unit Testing & CI/CD</span>
+                <span className="text-amber-300">Kafka</span>
+                <span className="text-gray-400">{"', '"}</span>
+                <span className="text-amber-300">React</span>
+                <span className="text-gray-400">{"', '"}</span>
+                <span className="text-amber-300">Next.js</span>
                 <span className="text-gray-400">{"'],"}</span>
               </div>
 

@@ -13,20 +13,20 @@ function ProjectCard({ project }) {
       </div>
 
       {/* Header */}
-      <div className="px-4 lg:px-8 py-3 lg:py-5 relative">
+      <div className="px-3 sm:px-4 lg:px-8 py-2 sm:py-3 lg:py-5 relative">
         <div className="flex flex-row space-x-1 lg:space-x-2 absolute top-1/2 -translate-y-1/2">
           <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-red-400"></div>
           <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-orange-400"></div>
           <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-green-200"></div>
         </div>
-        <p className="text-center ml-3 text-[#16f2b3] text-base lg:text-xl font-semibold tracking-wide">
+        <p className="text-center ml-3 text-[#16f2b3] text-sm sm:text-base lg:text-xl font-semibold tracking-wide">
           {project.name}
         </p>
       </div>
 
       {/* Code block styled as Kotlin */}
-      <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
-        <code className="font-mono text-xs md:text-sm lg:text-base">
+      <div className="overflow-hidden border-t-[2px] border-indigo-900 px-3 sm:px-4 lg:px-8 py-3 sm:py-4 lg:py-8">
+        <code className="font-mono text-[10px] sm:text-xs md:text-sm lg:text-base">
           <div className="blink">
             <span className="mr-2 text-pink-500">val</span>
             <span className="mr-2 text-white">project</span>
@@ -42,16 +42,9 @@ function ProjectCard({ project }) {
           </div>
 
           <div className="ml-4 lg:ml-8 mr-2">
-            <span className="text-white">platform:</span>
+            <span className="text-white">role:</span>
             <span className="text-gray-400">{`"`}</span>
-            <span className="text-amber-300">Android (Native)</span>
-            <span className="text-gray-400">{`",`}</span>
-          </div>
-
-          <div className="ml-4 lg:ml-8 mr-2">
-            <span className="text-white">language:</span>
-            <span className="text-gray-400">{`"`}</span>
-            <span className="text-amber-300">Kotlin</span>
+            <span className="text-amber-300">{project.role}</span>
             <span className="text-gray-400">{`",`}</span>
           </div>
 
@@ -59,32 +52,18 @@ function ProjectCard({ project }) {
             <span className="text-white">tools:</span>
             <span className="text-gray-400">{` listOf(`}</span>
             {
-              [
-                "Jetpack Compose",
-                "Coroutines",
-                "Flow",
-                "Room DB",
-                "Hilt DI",
-                "Retrofit",
-                "Ktor",
-                "KMP",
-                "Firebase",
-                "CI/CD"
-              ].map((tool, i, arr) => (
-                <React.Fragment key={i}>
-                  <span className="text-amber-300">&quot;{tool}&quot;</span>
-                  {arr.length - 1 !== i && <span className="text-gray-400">, </span>}
-                </React.Fragment>
-              ))
+              project.tools && project.tools.length > 0 ? (
+                project.tools.slice(0, 10).map((tool, i, arr) => (
+                  <React.Fragment key={i}>
+                    <span className="text-amber-300">&quot;{tool}&quot;</span>
+                    {arr.length - 1 !== i && <span className="text-gray-400">, </span>}
+                  </React.Fragment>
+                ))
+              ) : (
+                <span className="text-amber-300">&quot;Various&quot;</span>
+              )
             }
             <span className="text-gray-400">{`),`}</span>
-          </div>
-
-          <div>
-            <span className="ml-4 lg:ml-8 mr-2 text-white">role:</span>
-            <span className="text-gray-400">{`"`}</span>
-            <span className="text-amber-300">{project.role || 'Senior Android Developer'}</span>
-            <span className="text-gray-400">{`",`}</span>
           </div>
 
           <div className="ml-4 lg:ml-8 mr-2">

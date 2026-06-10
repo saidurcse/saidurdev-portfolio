@@ -1,10 +1,10 @@
 export const contactsData = {
-    email: 'contact@saidur.dev',
+    email: 'saidurdev16@gmail.com',
     phone: '',
     address: 'Dallas, Texas, USA ',
     github: 'https://github.com/saidurcse/',
     facebook: '',
-    linkedIn: '',
+    linkedIn: 'https://www.linkedin.com/in/saidur-cse/',
     twitter: '',
     stackOverflow: '',
     devUsername: 'saidurtech'

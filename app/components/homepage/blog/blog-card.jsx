@@ -11,13 +11,19 @@ function BlogCard({ blog }) {
     <div className="border border-[#1d293a] hover:border-[#464c6a] transition-all duration-500 bg-[#1b203e] rounded-lg relative group"
     >
       <div className="h-44 lg:h-52 w-auto cursor-pointer overflow-hidden rounded-t-lg">
-        <Image
-          src={blog?.cover_image}
-          height={1080}
-          width={1920}
-          alt=""
-          className='h-full w-full group-hover:scale-110 transition-all duration-300'
-        />
+        {blog?.cover_image ? (
+          <Image
+            src={blog.cover_image}
+            height={1080}
+            width={1920}
+            alt={blog.title || "Blog cover"}
+            className='h-full w-full group-hover:scale-110 transition-all duration-300'
+          />
+        ) : (
+          <div className="h-full w-full bg-[#1a1443] flex items-center justify-center">
+            <span className="text-[#16f2b3] text-2xl font-bold">Blog</span>
+          </div>
+        )}
       </div>
       <div className="p-2 sm:p-3 flex flex-col">
         <div className="flex justify-between items-center text-[#16f2b3] text-sm">

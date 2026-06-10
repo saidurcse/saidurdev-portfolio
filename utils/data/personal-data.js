@@ -1,17 +1,22 @@
 export const personalData = {
   name: "Saidur Rahman",
   profile: '/profile.jpg',
-  designation: "Mobile Developer",
-  description: "My name is Saidur Rahman (Senior Android Developer | 11+ Years of Experience | Kotlin • Java • Jetpack Compose • Architect • Generative AI). I am a results-driven **Senior Android Developer** with over 11 years of experience designing, developing, and optimizing scalable mobile applications across diverse industries including **E-commerce, Healthcare, Fintech, Logistics, Field Services, and AR/VR**. My career is defined by delivering user-focused, high-performance apps while leading teams through the full software development lifecycle.",
-  email: 'contact@saidur.dev',
+  designation: "Tech Lead | AI-First Engineer | Full-Stack Architect | AI/GenAI Engineer",
+  description: "Results-driven Full Stack Developer & Architect with 15+ years of experience in scalable enterprise applications, cloud-native architecture, and AI-powered solutions. Specialized in Generative AI, LLM integration, RAG architecture, and semantic search. Expert in Node.js, microservices, Kong API Gateway, and event-driven systems (Kafka, Zookeeper). Proficient in PostgreSQL, MongoDB, Redis, Elasticsearch, and ChromaDB. Extensive experience in full stack web and mobile development (Android, iOS) with focus on performance and scalability. Strong in system design, API security, and CI/CD pipelines. Proven leader in delivering enterprise-grade solutions and mentoring technical teams.",
+  email: 'saidurdev16@gmail.com',
   phone: '',
   address: 'Dallas, Texas, USA',
   github: 'https://github.com/saidurcse/',
   facebook: '',
-  linkedIn: 'https://www.linkedin.com/in/saidur-tech16/',
+  linkedIn: 'https://www.linkedin.com/in/saidur-cse/',
   twitter: '',
   stackOverflow: '',
   leetcode: "",
   devUsername: 'saidurtech',
-  resume: "https://drive.google.com/file/d/1NSU1ryoWMWCh_jh9CdDYCL-nUmUT6CVx/view?usp=sharing"
+  resume: "https://drive.google.com/file/d/1KNRzyupYNg33xrB264gHreI7TpV_y5mH/view?usp=sharing",
+  role: "Tech Lead | AI-First Engineer | Full-Stack Architect | AI/GenAI Engineer",
+  language: "JavaScript, TypeScript, Kotlin, Python, Java, Swift",
+  hardWorker: true,
+  quickLearner: true,
+  teamPlayer: true
 }
