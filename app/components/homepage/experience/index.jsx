@@ -38,7 +38,7 @@ function Experience() {
 
       <div className="py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-          <div className="flex flex-col justify-start items-center gap-6 sticky top-24 self-start">
+          <div className="flex flex-col justify-start items-center gap-6 lg:sticky lg:top-24 lg:self-start order-1">
             <div className="w-full">
               <AnimationLottie animationPath={codeAnim} />
             </div>
@@ -47,7 +47,7 @@ function Experience() {
             </div>
           </div>
 
-          <div>
+          <div className="order-2">
             <div className="flex flex-col gap-6">
               {
                 experiences.map(experience => (

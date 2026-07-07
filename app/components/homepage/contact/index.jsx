@@ -20,6 +20,13 @@ function ContactSection() {
         </span>
         <span className="h-36 w-[2px] bg-[#1a1443]"></span>
       </div>
+      <div className="flex justify-center my-5 lg:hidden">
+        <div className="flex items-center">
+          <span className="w-16 h-[2px] bg-[#1a1443]"></span>
+          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">Contact</span>
+          <span className="w-16 h-[2px] bg-[#1a1443]"></span>
+        </div>
+      </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
         <ContactForm />
         <div className="lg:w-3/4 h-full flex flex-col">
