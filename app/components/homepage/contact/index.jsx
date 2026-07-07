@@ -7,6 +7,7 @@ import { FaFacebook, FaStackOverflow } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoGithub, IoMdCall } from "react-icons/io";
 import { MdAlternateEmail } from "react-icons/md";
+import { HiOutlineOfficeBuilding } from "react-icons/hi";
 import ContactForm from './contact-form';
 
 function ContactSection() {
@@ -18,9 +19,11 @@ function ContactSection() {
         </span>
         <span className="h-36 w-[2px] bg-[#1a1443]"></span>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
         <ContactForm />
-        <div className="lg:w-3/4 ">
+        <div className="lg:w-3/4 h-full flex flex-col">
+          <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase invisible select-none">placeholder</p>
+          <div className="flex-1 border border-[#464c6a] rounded-xl p-5 lg:p-7 flex flex-col justify-between">
           <div className="flex flex-col gap-5 lg:gap-9">
             <p className="text-sm md:text-xl flex items-center gap-3">
               <MdAlternateEmail
@@ -44,9 +47,21 @@ function ContactSection() {
                 className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
                 size={36}
               />
-              <span>
-                {personalData.address}
-              </span>
+              <span>{personalData.address}</span>
+            </p>
+            <p className="text-sm md:text-xl flex items-center gap-3">
+              <HiOutlineOfficeBuilding
+                className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
+                size={36}
+              />
+              <Link
+                href="https://www.sraurora.tech/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#16f2b3] hover:underline"
+              >
+                My Company – SRAurora Tech
+              </Link>
             </p>
           </div>
           <div className="mt-8 lg:mt-16 flex items-center gap-5 lg:gap-10">
@@ -80,6 +95,7 @@ function ContactSection() {
                 size={48}
               />
             </Link> */}
+          </div>
           </div>
         </div>
       </div>

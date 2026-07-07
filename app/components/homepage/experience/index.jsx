@@ -5,7 +5,8 @@
 import { experiences } from "@/utils/data/experience";
 import Image from "next/image";
 import { BsPersonWorkspace } from "react-icons/bs";
-import experience from '../../../assets/lottie/code.json';
+import codeAnim from '../../../assets/lottie/code.json';
+import codingAnim from '../../../assets/lottie/coding.json';
 import dynamic from 'next/dynamic';
 import GlowCard from "../../helper/glow-card";
 
@@ -37,9 +38,12 @@ function Experience() {
 
       <div className="py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-          <div className="flex justify-center items-start">
-            <div className="w-full h-full">
-              <AnimationLottie animationPath={experience} />
+          <div className="flex flex-col justify-start items-center gap-6 sticky top-24 self-start">
+            <div className="w-full">
+              <AnimationLottie animationPath={codeAnim} />
+            </div>
+            <div className="w-full">
+              <AnimationLottie animationPath={codingAnim} />
             </div>
           </div>
 
