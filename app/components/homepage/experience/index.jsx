@@ -16,7 +16,7 @@ const AnimationLottie = dynamic(
 
 function Experience() {
   return (
-    <div id="experience" className="relative z-50 border-t my-12 lg:my-24 border-[#25213b] scroll-mt-20">
+    <div id="experience" className="relative z-10 border-t my-12 lg:my-24 border-[#25213b] scroll-mt-20">
       <Image
         src="/section.svg"
         alt="Hero"
