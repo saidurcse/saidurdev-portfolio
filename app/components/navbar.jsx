@@ -8,7 +8,7 @@ function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-transparent">
+    <nav className="bg-[#0d1224]/80 backdrop-blur-md border-b border-[#1b2c68a0]">
       <div className="flex items-center justify-between py-5 px-4">
         <div className="flex flex-shrink-0 items-center">
           <Link
@@ -48,6 +48,9 @@ function Navbar() {
           </li>
           <li>
             <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#projects"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">PROJECTS</div></Link>
+          </li>
+          <li>
+            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#contact"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">CONTACT</div></Link>
           </li>
         </ul>
       </div>
@@ -107,6 +110,15 @@ function Navbar() {
               onClick={() => setIsOpen(false)}
             >
               <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">PROJECTS</div>
+            </Link>
+          </li>
+          <li>
+            <Link 
+              className="block px-4 py-2 no-underline outline-none hover:no-underline" 
+              href="/#contact"
+              onClick={() => setIsOpen(false)}
+            >
+              <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">CONTACT</div>
             </Link>
           </li>
         </ul>
