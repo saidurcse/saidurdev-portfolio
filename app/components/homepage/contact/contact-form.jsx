@@ -68,9 +68,11 @@ function ContactForm() {
               type="text"
               maxLength="100"
               required={true}
+              autoComplete="name"
               onChange={(e) => setUserInput({ ...userInput, name: e.target.value })}
               onBlur={checkRequired}
               value={userInput.name}
+              suppressHydrationWarning
             />
           </div>
 
@@ -81,12 +83,14 @@ function ContactForm() {
               type="email"
               maxLength="100"
               required={true}
+              autoComplete="email"
               value={userInput.email}
               onChange={(e) => setUserInput({ ...userInput, email: e.target.value })}
               onBlur={() => {
                 checkRequired();
                 setError({ ...error, email: !isValidEmail(userInput.email) });
               }}
+              suppressHydrationWarning
             />
             {error.email && <p className="text-sm text-red-400">Please provide a valid email!</p>}
           </div>
@@ -98,10 +102,12 @@ function ContactForm() {
               maxLength="500"
               name="message"
               required={true}
+              autoComplete="off"
               onChange={(e) => setUserInput({ ...userInput, message: e.target.value })}
               onBlur={checkRequired}
               rows="4"
               value={userInput.message}
+              suppressHydrationWarning
             />
           </div>
           <div className="flex flex-col items-center gap-3">
@@ -110,9 +116,9 @@ function ContactForm() {
             </p>}
             <button
               className="flex items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-5 md:px-12 py-2.5 md:py-3 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold"
-              role="button"
               onClick={handleSendMail}
               disabled={isLoading}
+              suppressHydrationWarning
             >
               {
                 isLoading ?
