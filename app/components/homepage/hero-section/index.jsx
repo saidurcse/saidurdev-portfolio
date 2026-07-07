@@ -41,6 +41,7 @@ function HeroSection() {
             <Link
               href={personalData.github}
               target='_blank'
+              rel="noopener noreferrer"
               className="transition-all text-pink-500 hover:scale-125 duration-300"
             >
               <BsGithub size={30} />
@@ -48,6 +49,7 @@ function HeroSection() {
             <Link
               href={personalData.linkedIn}
               target='_blank'
+              rel="noopener noreferrer"
               className="transition-all text-pink-500 hover:scale-125 duration-300"
             >
               <BsLinkedin size={30} />

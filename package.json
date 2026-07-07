@@ -10,12 +10,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emailjs/browser": "^4.3.1",
-    "@next/third-parties": "15.1.1",
-    "axios": "^1.6.8",
+    "@next/third-parties": "^15.5.20",
     "lottie-react": "^2.4.1",
-    "next": "15.1.11",
-    "nodemailer": "^6.9.15",
+    "next": "^15.5.20",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-fast-marquee": "^1.6.2",
@@ -28,7 +25,7 @@
   "devDependencies": {
     "autoprefixer": "latest",
     "eslint": "latest",
-    "eslint-config-next": "15.1.1",
+    "eslint-config-next": "^15.5.20",
     "postcss": "latest",
     "sass": "^1.69.5",
     "tailwindcss": "latest"

@@ -6,7 +6,8 @@ yarn-error.log
 .pnpm-debug.log
 package-lock.json.backup
 
-# Ignore local development settings
+# Ignore environment files (secrets must never be baked into image layers)
+.env
 .env.local
 .env.development.local
 .env.test.local
