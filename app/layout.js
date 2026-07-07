@@ -11,9 +11,9 @@ import "./css/globals.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Portfolio of Saidur - Software Developer",
+  title: "Portfolio of Saidur - AI Engineer | Full Stack Developer | Software Architect",
   description:
-    "This is the portfolio of Saidur Rahman. (Senior Android Developer | 11+ Years of Experience | Kotlin • Jetpack • AI/ML Integration). I am a results-driven **Senior Android Developer** with over 11 years of experience designing, developing, and optimizing scalable mobile applications across diverse industries including **E-commerce, Healthcare, Fintech, Logistics, Field Services, and AR/VR**. My career is defined by delivering user-focused, high-performance apps while leading teams through the full software development lifecycle.",
+    "Full Stack Developer & Architect with 15+ years of experience in AI, LLMs, RAG, cloud-native systems, scalable applications, Node.js, microservices, mobile apps, and enterprise solution architecture.",
 };
 
 export default function RootLayout({ children }) {
