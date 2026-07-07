@@ -7,6 +7,7 @@ import { FaFacebook, FaStackOverflow } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoGithub, IoMdCall } from "react-icons/io";
 import { MdAlternateEmail } from "react-icons/md";
+import { MdOutlineEmail } from "react-icons/md";
 import { HiOutlineOfficeBuilding } from "react-icons/hi";
 import ContactForm from './contact-form';
 
@@ -49,20 +50,42 @@ function ContactSection() {
               />
               <span>{personalData.address}</span>
             </p>
-            <p className="text-sm md:text-xl flex items-center gap-3">
+            <div className="flex items-start gap-3">
               <HiOutlineOfficeBuilding
-                className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
+                className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer shrink-0 mt-1"
                 size={36}
               />
-              <Link
-                href="https://www.sraurora.tech/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#16f2b3] hover:underline"
-              >
-                My Company – SRAurora Tech
-              </Link>
-            </p>
+              <div className="flex flex-col gap-1 text-sm md:text-base">
+                <Link
+                  href="https://www.sraurora.tech/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#16f2b3] font-semibold hover:underline"
+                >
+                  My Company – SRAurora Tech
+                </Link>
+                <Link
+                  href="https://www.sraurora.tech/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/70 hover:text-[#16f2b3] hover:underline text-xs md:text-sm"
+                >
+                  www.sraurora.tech
+                </Link>
+                <Link
+                  href="mailto:info@sraurora.tech"
+                  className="text-white/70 hover:text-[#16f2b3] hover:underline text-xs md:text-sm"
+                >
+                  info@sraurora.tech
+                </Link>
+                <Link
+                  href="mailto:support@sraurora.tech"
+                  className="text-white/70 hover:text-[#16f2b3] hover:underline text-xs md:text-sm"
+                >
+                  support@sraurora.tech
+                </Link>
+              </div>
+            </div>
           </div>
           <div className="mt-8 lg:mt-16 flex items-center gap-5 lg:gap-10">
             <Link target="_blank" href={personalData.github}>
