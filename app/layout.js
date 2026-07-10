@@ -60,7 +60,7 @@ export default function RootLayout({ children }) {
         <Footer />
         <WhatsAppButton />
       </body>
-      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM} />
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
     </html>
   );
 }
