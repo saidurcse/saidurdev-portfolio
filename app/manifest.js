@@ -15,6 +15,18 @@ export default function manifest() {
     categories: ["Technology", "Developer", "Portfolio", "Software Engineering"],
     icons: [
       {
+        src: "/icon-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
+        purpose: "any maskable",
+      },
+      {
+        src: "/icon-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "any maskable",
+      },
+      {
         src: "/icon-192x192.svg",
         sizes: "192x192",
         type: "image/svg+xml",
@@ -39,21 +51,21 @@ export default function manifest() {
         short_name: "Projects",
         description: "View Saidur Rahman's projects",
         url: "/projects",
-        icons: [{ src: "/icon-192x192.svg", sizes: "192x192", type: "image/svg+xml" }],
+        icons: [{ src: "/icon-192x192.png", sizes: "192x192", type: "image/png" }],
       },
       {
         name: "Blog",
         short_name: "Blog",
         description: "Read technical articles by Saidur Rahman",
         url: "/blog",
-        icons: [{ src: "/icon-192x192.svg", sizes: "192x192", type: "image/svg+xml" }],
+        icons: [{ src: "/icon-192x192.png", sizes: "192x192", type: "image/png" }],
       },
       {
         name: "Contact",
         short_name: "Contact",
         description: "Get in touch with Saidur Rahman",
         url: "/#contact",
-        icons: [{ src: "/icon-192x192.svg", sizes: "192x192", type: "image/svg+xml" }],
+        icons: [{ src: "/icon-192x192.png", sizes: "192x192", type: "image/png" }],
       },
     ],
     related_applications: [],
