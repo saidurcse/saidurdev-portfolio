@@ -27,8 +27,13 @@ const ScrollToTop = () => {
   const onClickBtn = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <button className={btnCls} onClick={onClickBtn} suppressHydrationWarning>
-      <FaArrowUp />
+    <button
+      className={`${btnCls} focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#16f2b3]`}
+      onClick={onClickBtn}
+      aria-label="Scroll to top"
+      suppressHydrationWarning
+    >
+      <FaArrowUp aria-hidden="true" />
     </button>
   );
 };

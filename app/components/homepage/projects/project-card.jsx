@@ -19,9 +19,9 @@ function ProjectCard({ project }) {
           <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-orange-400"></div>
           <div className="h-2 w-2 lg:h-3 lg:w-3 rounded-full bg-green-200"></div>
         </div>
-        <p className="text-center ml-3 text-[#16f2b3] text-sm sm:text-base lg:text-xl font-semibold tracking-wide">
+        <h3 className="text-center ml-3 text-[#16f2b3] text-sm sm:text-base lg:text-xl font-semibold tracking-wide">
           {project.name}
-        </p>
+        </h3>
       </div>
 
       {/* Code block styled as Kotlin */}

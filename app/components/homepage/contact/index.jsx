@@ -7,15 +7,17 @@ import { FaFacebook, FaStackOverflow } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoGithub, IoMdCall } from "react-icons/io";
 import { MdAlternateEmail } from "react-icons/md";
-import { MdOutlineEmail } from "react-icons/md";
 import { HiOutlineOfficeBuilding } from "react-icons/hi";
 import ContactForm from './contact-form';
 
+import { ContactPageSchema } from "../../seo/json-ld";
+
 function ContactSection() {
   return (
-    <div id="contact" className="my-12 lg:my-16 relative mt-24 text-white scroll-mt-20">
+    <section id="contact" aria-labelledby="contact-heading" className="my-12 lg:my-16 relative mt-24 text-white scroll-mt-20">
+      <ContactPageSchema />
       <div className="hidden lg:flex flex-col items-center absolute top-24 -right-8">
-        <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
+        <span id="contact-heading" className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
           CONTACT
         </span>
         <span className="h-36 w-[2px] bg-[#1a1443]"></span>
@@ -129,7 +131,7 @@ function ContactSection() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

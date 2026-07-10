@@ -20,9 +20,11 @@ function Navbar() {
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden text-white text-2xl"
+          className="md:hidden text-white text-2xl p-2 rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#16f2b3]"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
         >
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
@@ -57,7 +59,7 @@ function Navbar() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <ul className="md:hidden flex flex-col items-center bg-[#0d1224] py-4 space-y-4">
+        <ul id="mobile-menu" className="md:hidden flex flex-col items-center bg-[#0d1224] py-4 space-y-4">
           <li>
             <Link 
               className="block px-4 py-2 no-underline outline-none hover:no-underline" 

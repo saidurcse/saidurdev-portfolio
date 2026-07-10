@@ -6,7 +6,7 @@ import Image from "next/image";
 
 function AboutSection() {
   return (
-    <div id="about" className="my-12 lg:my-16 relative scroll-mt-20">
+    <section id="about" aria-labelledby="about-heading" className="my-12 lg:my-16 relative scroll-mt-20">
       <div className="hidden lg:flex flex-col items-center absolute top-16 -right-8">
         <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
           ABOUT ME
@@ -15,9 +15,9 @@ function AboutSection() {
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
         <div className="order-2 lg:order-1">
-          <p className="font-medium mb-5 text-[#16f2b3] text-lg sm:text-xl uppercase">
+          <h2 id="about-heading" className="font-medium mb-5 text-[#16f2b3] text-lg sm:text-xl uppercase">
             Who I am?
-          </p>
+          </h2>
           <p className="text-gray-200 text-sm sm:text-base lg:text-lg">
             {personalData.description}
           </p>
@@ -28,8 +28,10 @@ function AboutSection() {
               src={personalData.profile}
               width={280}
               height={280}
-              alt="Saidur Rahman"
+              alt="Muhammad Saidur Rahman - AI Engineer and Full Stack Developer"
               className="rounded-lg transition-all duration-1000 grayscale hover:grayscale-0 hover:scale-110 cursor-pointer w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] lg:w-[280px] lg:h-[280px]"
+              priority
+              sizes="(max-width: 640px) 200px, (max-width: 1024px) 240px, 280px"
             />
           ) : (
             <div className="w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] lg:w-[280px] lg:h-[280px] rounded-lg bg-[#1a1443] flex items-center justify-center">
@@ -38,7 +40,7 @@ function AboutSection() {
           )}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

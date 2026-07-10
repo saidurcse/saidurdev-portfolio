@@ -1,0 +1,21 @@
+/* TEAM */
+    Owner / Developer: Muhammad Saidur Rahman
+    Site: https://www.saidur.dev
+    Twitter: @saidurcse
+    LinkedIn: https://www.linkedin.com/in/saidur-cse/
+    GitHub: https://github.com/saidurcse/
+    From: Dallas, Texas, USA
+
+/* THANKS */
+    Next.js Team: https://nextjs.org
+    Tailwind CSS Team: https://tailwindcss.com
+    Dev.to Community: https://dev.to
+
+/* SITE */
+    Last update: 2026/07/10
+    Language: English
+    Doctype: HTML5
+    Framework: Next.js 15
+    Styling: Tailwind CSS
+    CMS: Dev.to (blog articles)
+    IDE: VS Code
