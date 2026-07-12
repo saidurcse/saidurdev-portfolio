@@ -22,7 +22,9 @@ export const siteConfig = {
     "https://drive.google.com/file/d/1KNRzyupYNg33xrB264gHreI7TpV_y5mH/view?usp=sharing",
   devUsername: "saidurtech",
   googleVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
-  bingVerification: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION || "",
+  bingVerification:
+    process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION ||
+    "B4444B0BE055D28D12338BCE402FA3AB",
   yandexVerification: process.env.NEXT_PUBLIC_YANDEX_SITE_VERIFICATION || "",
   twitterHandle: "@saidurcse",
   authors: [{ name: "Muhammad Saidur Rahman", url: "https://www.saidur.dev" }],
