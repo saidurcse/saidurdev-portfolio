@@ -87,8 +87,8 @@ function HeroSection() {
               </span>
             </Link>
 
-            <Link href="#contact" aria-label="Let's talk about your project" className="flex items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-3 md:px-8 py-3 md:py-4 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#16f2b3]">
-              <span>Let&apos;s Talk</span>
+            <Link href="#contact" aria-label="Hire Saidur Rahman" className="flex items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-3 md:px-8 py-3 md:py-4 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#16f2b3]">
+              <span>Hire me</span>
               <RiContactsFill size={16} aria-hidden="true" />
             </Link>
 
