@@ -26,6 +26,7 @@ export const siteConfig = {
     process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION ||
     "B4444B0BE055D28D12338BCE402FA3AB",
   yandexVerification: process.env.NEXT_PUBLIC_YANDEX_SITE_VERIFICATION || "",
+  fbAppId: process.env.NEXT_PUBLIC_FB_APP_ID || "1026016576792575",
   twitterHandle: "@saidurcse",
   authors: [{ name: "Muhammad Saidur Rahman", url: "https://www.saidur.dev" }],
   creator: "Muhammad Saidur Rahman",
@@ -144,6 +145,11 @@ export function getBaseMetadata(overrides = {}) {
     },
     referrer: "origin-when-cross-origin",
     metadataBase: new URL(siteUrl),
+    other: siteConfig.fbAppId
+      ? {
+          "fb:app_id": siteConfig.fbAppId,
+        }
+      : undefined,
     ...overrides,
   };
 }
