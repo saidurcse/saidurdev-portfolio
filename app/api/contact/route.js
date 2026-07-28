@@ -154,7 +154,7 @@ export async function POST(request) {
 
     // 📧 Send Email via Resend
     const { error } = await resend.emails.send({
-      from: 'Contact Form <contact@saidur.dev>',
+      from: 'Contact Form <saidur@sraurora.tech>',
       to: [process.env.EMAIL_ADDRESS],
       subject: `New Message from ${safeName}`,
       html: generateEmailTemplate(safeName, safeEmail, message),

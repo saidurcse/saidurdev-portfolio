@@ -242,7 +242,7 @@ export function ProfessionalServiceSchema() {
     },
     contactPoint: {
       "@type": "ContactPoint",
-      email: "contact@saidur.dev",
+      email: "saidur@sraurora.tech",
       telephone: "+1-972-665-8418",
       contactType: "Consulting Inquiry",
       availableLanguage: ["English"],
@@ -270,7 +270,7 @@ export function ContactPageSchema() {
     mainEntity: {
       "@type": "Person",
       name: "Muhammad Saidur Rahman",
-      email: "contact@saidur.dev",
+      email: "saidur@sraurora.tech",
       telephone: "+1-972-665-8418",
       address: {
         "@type": "PostalAddress",

@@ -35,14 +35,14 @@ function ContactSection() {
           <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase invisible select-none">placeholder</p>
           <div className="flex-1 border border-[#464c6a] rounded-xl p-5 lg:p-7 flex flex-col justify-between">
           <div className="flex flex-col gap-5 lg:gap-9">
-            <p className="text-sm md:text-xl flex items-center gap-3">
+            <p className="text-sm md:text-base flex items-center gap-3">
               <MdAlternateEmail
                 className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
                 size={36}
               />
               <span>{personalData.email}</span>
             </p>
-            <p className="text-sm md:text-xl flex items-center gap-3">
+            <p className="text-sm md:text-base flex items-center gap-3">
               <IoMdCall
                 className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
                 size={36}
@@ -52,7 +52,7 @@ function ContactSection() {
                 <span>USA: {personalData.phoneUSA}</span>
               </span>
             </p>
-            <p className="text-sm md:text-xl flex items-center gap-3">
+            <p className="text-sm md:text-base flex items-center gap-3">
               <CiLocationOn
                 className="bg-[#8b98a5] p-2 rounded-full hover:bg-[#16f2b3] hover:scale-110 transition-all duration-300 text-gray-800 cursor-pointer"
                 size={36}

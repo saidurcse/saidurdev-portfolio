@@ -10,7 +10,7 @@ export const siteConfig = {
   locale: "en_US",
   language: "en",
   country: "US",
-  email: "contact@saidur.dev",
+  email: "saidur@sraurora.tech",
   phoneBD: "+88(0175)-444-8346",
   phoneUSA: "+1(972)-665-8418",
   address: "Dallas, Texas, USA",
