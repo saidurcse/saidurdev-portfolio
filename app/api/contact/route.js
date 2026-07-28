@@ -28,7 +28,7 @@ const generateEmailTemplate = (name, email, userMessage) => `
 `;
 
 // ------------------ CORS ------------------
-const ALLOWED_ORIGIN = process.env.NEXT_PUBLIC_SITE_URL || 'https://saidur.dev';
+const ALLOWED_ORIGIN = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.saidur.dev';
 
 const getCorsHeaders = (requestOrigin) => {
   const isAllowed = requestOrigin === ALLOWED_ORIGIN;
@@ -153,8 +153,9 @@ export async function POST(request) {
     const safeEmail = email.replace(/[\r\n;,]+/g, '').trim();
 
     // 📧 Send Email via Resend
+    const fromEmail = process.env.RESEND_FROM_EMAIL || 'Contact Form <contact@saidur.dev>';
     const { error } = await resend.emails.send({
-      from: 'Contact Form <saidur@sraurora.tech>',
+      from: fromEmail,
       to: [process.env.EMAIL_ADDRESS],
       subject: `New Message from ${safeName}`,
       html: generateEmailTemplate(safeName, safeEmail, message),
@@ -164,7 +165,7 @@ export async function POST(request) {
     if (error) {
       console.error('Resend Error:', error);
       return new Response(
-        JSON.stringify({ success: false, message: 'Failed to send message.' }),
+        JSON.stringify({ success: false, message: error?.message || 'Failed to send message.' }),
         { status: 500, headers: corsHeaders }
       );
     }
