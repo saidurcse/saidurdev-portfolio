@@ -60,6 +60,18 @@ module.exports = {
   poweredByHeader: false,
   compress: true,
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          { type: 'host', value: 'saidur.dev' },
+        ],
+        destination: `${siteUrl}/:path*`,
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

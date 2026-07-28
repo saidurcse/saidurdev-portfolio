@@ -106,10 +106,6 @@ export function getBaseMetadata(overrides = {}) {
     },
     alternates: {
       canonical: "/",
-      languages: {
-        "en-US": "/",
-        en: "/",
-      },
     },
     openGraph: {
       type: "website",
