@@ -27,7 +27,7 @@ function HeroSection() {
             Hi, I&apos;m {' '}
             <span className="text-pink-500">{personalData.name}</span>
             {` - `}
-            <span className="text-[#16f2b3]">
+            <span className="text-[#16f2b3] text-2xl sm:text-3xl lg:text-[1.9rem]">
               {personalData.designation.split('|').map((part, i, arr) => (
                 <span key={i}>
                   {part.trim()}

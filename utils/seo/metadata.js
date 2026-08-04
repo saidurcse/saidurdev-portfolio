@@ -19,7 +19,7 @@ export const siteConfig = {
   github: "https://github.com/saidurcse/",
   linkedIn: "https://www.linkedin.com/in/saidur-cse/",
   resume:
-    "https://drive.google.com/file/d/1KNRzyupYNg33xrB264gHreI7TpV_y5mH/view?usp=sharing",
+    "https://drive.google.com/file/d/1IcRXWq0JM5o66w1fKMx2iAD1q9Lz-xef/view?usp=sharing",
   devUsername: "saidurtech",
   googleVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || "",
   bingVerification:

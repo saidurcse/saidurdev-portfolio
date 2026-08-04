@@ -165,7 +165,7 @@ export const personalData = {
   stackOverflow: '',
   leetcode: "",
   devUsername: 'saidurtech',
-  resume: "https://drive.google.com/file/d/1NSU1ryoWMWCh_jh9CdDYCL-nUmUT6CVx/view?usp=sharing"
+  resume: "https://drive.google.com/file/d/1rRJaxbpnVK0jxyvfKjMJmgbK3s77egEf/view?usp=sharing"
 };
 ```
 
