@@ -1,8 +1,8 @@
 export const experiences = [
   {
     id: 1,
-    title: 'Tech Lead, Full-Stack Architect & AI Engineer',
-    company: "UniversaPulsar",
+    title: 'Co-Founder & CTO | Engineering Leader | AI Solutions Architect',
+    company: "SRAurora Tech",
     duration: "(April 2026 - Present)"
   },
   {
