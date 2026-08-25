@@ -28,7 +28,7 @@ export default async function sitemap() {
   // Static routes
   const staticRoutes = [
     {
-      url: siteUrl,
+      url: `${siteUrl}/`,
       lastModified: now,
       changeFrequency: "daily",
       priority: 1.0,
