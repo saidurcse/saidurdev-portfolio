@@ -134,7 +134,7 @@
 ## Phase 4 — Structured Data Implemented
 
 1. **Person** — Muhammad Saidur Rahman profile, sameAs, knowsAbout, alumniOf
-2. **Organization** — SRAurora Tech
+2. **Organization** — SR Aurora Tech
 3. **WebSite** — with SearchAction for blog search
 4. **WebPage** — on home, blog, projects, 404
 5. **BreadcrumbList** — on blog and projects pages

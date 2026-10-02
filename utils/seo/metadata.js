@@ -14,7 +14,7 @@ export const siteConfig = {
   phoneBD: "+88(0175)-444-8346",
   phoneUSA: "+1(972)-665-8418",
   address: "Dallas, Texas, USA",
-  company: "SRAurora Tech",
+  company: "SR Aurora Tech",
   companyUrl: "https://www.sraurora.tech/",
   github: "https://github.com/saidurcse/",
   linkedIn: "https://www.linkedin.com/in/saidur-cse/",

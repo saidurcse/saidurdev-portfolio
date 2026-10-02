@@ -24,7 +24,7 @@ export function PersonSchema() {
       "Results-driven Full Stack Developer & Architect with 15+ years of experience in AI/LLM/RAG, cloud-native systems, Node.js microservices, and enterprise architecture.",
     worksFor: {
       "@type": "Organization",
-      name: "SRAurora Tech",
+      name: "SR Aurora Tech",
       url: "https://www.sraurora.tech/",
     },
     sameAs: [
@@ -80,7 +80,7 @@ export function OrganizationSchema() {
   const data = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "SRAurora Tech",
+    name: "SR Aurora Tech",
     url: "https://www.sraurora.tech/",
     logo: "https://www.saidur.dev/icon-512x512.svg",
     sameAs: [

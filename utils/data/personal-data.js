@@ -1,7 +1,7 @@
 export const personalData = {
   name: "Saidur Rahman",
   profile: '/profile.jpg',
-  designation: "Co-Founder & CTO @ SRAurora Tech | Engineering Leader | Full-Stack Architect | Generative AI, LLM & RAG Expert",
+  designation: "Co-Founder & CTO @ SR Aurora Tech | Engineering Leader | Full-Stack Architect | Generative AI, LLM & RAG Expert",
   description: "Results-driven Full Stack Developer & Architect with 15+ years of experience in scalable enterprise applications, cloud-native architecture, and AI-powered solutions. Specialized in Generative AI, LLM integration, RAG architecture, and semantic search. Expert in Node.js, microservices, Kong API Gateway, and event-driven systems (Kafka, Zookeeper). Proficient in PostgreSQL, MongoDB, Redis, Elasticsearch, and ChromaDB. Extensive experience in full stack web and mobile development (Android, iOS) with focus on performance and scalability. Strong in system design, API security, and CI/CD pipelines. Proven leader in delivering enterprise-grade solutions and mentoring technical teams.",
   email: 'saidur@sraurora.tech',
   phoneBD: '+88(0175)-444-8346',

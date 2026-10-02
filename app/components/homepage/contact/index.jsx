@@ -71,7 +71,7 @@ function ContactSection() {
                   rel="noopener noreferrer"
                   className="text-[#16f2b3] font-semibold hover:underline"
                 >
-                  My Company – SRAurora Tech
+                  My Company – SR Aurora Tech
                 </Link>
                 <Link
                   href="https://www.sraurora.tech/"
